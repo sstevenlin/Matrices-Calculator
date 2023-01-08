@@ -1,0 +1,70 @@
+import java.util.Scanner;
+public class Main{
+  public static void main(String [] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Input the amount of columns for your first array");
+    int column1 = sc.nextInt();
+    System.out.println("Input the amount of rows for your first array");
+    int row1 = sc.nextInt();
+
+    System.out.println("array a:"  );
+    printArray(arrayGenerator(column1, row1));
+
+    System.out.println("Choose an operation: addition(1), subtration (2), multiplication (3)");
+    int operation = sc.nextInt();
+
+    if (operation == 1){
+      for(int i=0;i<3;i++){    
+        for(int j=0;j<3;j++){
+          c[i][j] = column1[i][j]+row1[i][j];
+          System.out.print(c[i][j] + " ");
+        }
+      }
+      
+    }
+    if (operation == 2){
+      for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){
+          c[i][j] = column1[i][j]-row1[i][j];
+          System.out.print(c[i][j] + " ");
+
+        }
+      }
+    }
+    
+    if (operation == 2){
+      for(int i=0;i<3;i++){ 
+        for(int j=0;j<3;j++){
+          c[i][j] = column1[i][j] * row1[i][j];
+          System.out.print(c[i][j] + " ");
+
+        }
+      }
+    }
+  }
+
+    public static int [][] arrayGenerator(int column1, int row1){
+      int [][] a = new int[column1][row1];
+      String list = "";
+      int x = (int)(Math.random()*100)+1;
+      for (int i = 0; i < w; i++){
+        for (int j = 0; j < d; j++){
+          while (list.indexOf(""+x) > -1){
+            x = (int)(Math.random()*100)+1;
+          }
+          list += x + "";
+          a[i][j] = x;
+        }
+      }
+      return a;
+    }
+  public static void printArray(int[][] a){
+    for(int i = 0; i < a.length; i++){
+      for (int j = 0; j < a[0].length; j++){
+        System.out.print(a[i][j] + "  ");
+      }
+
+      System.out.println();
+    }
+    
+  }
